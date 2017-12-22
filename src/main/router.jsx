@@ -3,11 +3,9 @@ import { Switch, Route } from 'react-router-dom';
 import Home from 'main/Home'
 
 const MainRouter = () => (
-    <main>
-        <Switch>
-            <Route exact path='/' component={Home}/>
-        </Switch>
-    </main>
+    <Switch>
+        <Route exact path='/' component={Home}/>
+    </Switch>
 )
 
 export default MainRouter

@@ -3,9 +3,7 @@ import Header from 'main/Home/Header'
 
 
 const Home = () => (
-    <div>
-        <Header />
-    </div>
+    <Header />
 );
 
 export default Home

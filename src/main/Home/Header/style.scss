@@ -1,3 +1,32 @@
-p{
-  color: red;
+@import "../../../static/css/common";
+@import  "../../../static/css/variable";
+
+.m-nav{
+  @include flexIt((top: 0, left: 0));
+  width: 100%;
+  height:68px;
+  padding: 0 $padding-default-x;
+  vertical-align: middle;
+  &:before{
+    background-image: url(../../../static/img/logo_aiablog.svg);
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100%;
+    display: inline-block;
+    width: 174px;
+    height: 23px;
+    content: "";
+  }
+
+  .brand-title, .logo, .nav-category{
+    display: inline-block;
+  }
+
+  .nav-category{
+    width: 200px;
+    float: right;
+    li{
+      display: inline-block;
+    }
+  }
 }

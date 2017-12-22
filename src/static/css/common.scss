@@ -1,0 +1,13 @@
+@function mapToKey($map) {
+  @each $key, $value in $map {
+    @return $key
+  }
+}
+
+@mixin flexIt($map: (top: 0, left: 0)) {
+  position: fixed;
+  @each $key, $value in $map {
+    #{mapToKey($key)}: $value;
+  }
+
+}
