@@ -22,7 +22,7 @@ module.exports = {
 
     module: {
         rules: [
-            {test: /\.scss/, use: ['style','css','sass']},
+            {test: /\.scss/, use: ['style-loader','css-loader','sass-loader']},
             {
                 test: /\.css$/,
                 use: [
@@ -58,17 +58,13 @@ module.exports = {
     resolve: {
         extensions: [ '.js','.jsx', '.json', '.scss'],
         alias: {
-
-            actions: path.resolve('src/actions'),
-            components: path.resolve('src/components'),
-            containers: path.resolve('src/containers'),
-            constants: path.resolve('src/constants'),
+            src: path.resolve('src'),
             fetch: path.resolve('src/fetch'),
-            reducers: path.resolve('src/reducers'),
-            static: path.resolve('src/static'),
+            reducers: path.resolve('src/reducer'),
             store: path.resolve('src/store'),
             util: path.resolve('src/util'),
-            api: path.resolve('src/api')
+            api: path.resolve('src/api'),
+            main: path.resolve('src/main')
         }
     },
     plugins: [
