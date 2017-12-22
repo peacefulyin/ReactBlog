@@ -1,9 +1,8 @@
 import React from 'react'
-import * as style from './style'
 
 const Header = () => (
-    <div>
-        <p>header</p>
+    <div className="header">
+        <p className="text-primary">1</p>
     </div>
 );
 
