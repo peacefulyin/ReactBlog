@@ -5,8 +5,10 @@
   @include flexIt((top: 0, left: 0));
   width: 100%;
   height:68px;
-  padding: 0 $padding-default-x;
   vertical-align: middle;
+  padding-left: 45px;
+  padding-right: 45px;
+
   &:before{
     background-image: url(../../../static/img/logo_aiablog.svg);
     background-repeat: no-repeat;
@@ -16,17 +18,32 @@
     width: 174px;
     height: 23px;
     content: "";
+    vertical-align: middle;
   }
 
   .brand-title, .logo, .nav-category{
     display: inline-block;
-  }
-
-  .nav-category{
-    width: 200px;
-    float: right;
-    li{
-      display: inline-block;
+    line-height: 70px;
+    &.logo,&.brand-title{
+      margin-left:45px;
+    }
+    &.nav-category{
+      float: right;
+      margin-right: 300px;
+      .nav-category-master > li{
+        margin: 0 15px;
+        display: inline-block;
+        vertical-align: top;
+      }
     }
   }
+
+}
+
+.show{
+  display: block;
+}
+
+.hide{
+  display: none;
 }

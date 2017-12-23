@@ -1,0 +1,16 @@
+.drop-master{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .drop-elems{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background-color: rgb(249, 249, 249);
+  }
+}
+
+.isHover{
+  background-color: rgb(249, 249, 249);
+
+}

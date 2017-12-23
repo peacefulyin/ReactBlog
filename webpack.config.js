@@ -38,7 +38,14 @@ module.exports = {
                     }
                 ]
             },
-            { test: /\.(png|jpg|jpeg)$/, use: ['url']},
+            {
+                test: /\.(png|jpg|jpeg|mp4)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                    },
+                ]
+            },
             {test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
@@ -53,7 +60,8 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'eslint-loader'
             },
-            {test: /\.svg/, loader: 'svg-url-loader'}
+            {test: /\.svg/, loader: 'svg-url-loader'},
+
         ]
     },
     resolve: {
@@ -62,6 +70,7 @@ module.exports = {
             src: path.resolve('src'),
             fetch: path.resolve('src/fetch'),
             reducers: path.resolve('src/reducer'),
+            components: path.resolve('src/components'),
             store: path.resolve('src/store'),
             util: path.resolve('src/util'),
             api: path.resolve('src/api'),

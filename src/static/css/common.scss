@@ -9,5 +9,5 @@
   @each $key, $value in $map {
     #{mapToKey($key)}: $value;
   }
-
 }
+
