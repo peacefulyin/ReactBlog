@@ -1,9 +1,7 @@
 .card-item{
   display: inline-block;
-  width: 33.333%;
   box-sizing: border-box;
   margin-bottom: 80px;
-  padding-right: 40px;
   cursor: pointer;
   &:hover .card-img-con img{
     transform: scale(1.1);

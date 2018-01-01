@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from 'main/Home/Nav'
 import './style.scss'
 import leftBannerMp4 from 'main/Home/static/leftBanner.mp4'
-import CardList from 'main/Home/CardList'
+import CardList from 'components/CardList'
 
 
 
@@ -23,7 +23,7 @@ const Home = () => (
                 </div>
             </div>
             <div className="center-right">
-                <CardList/>
+                <CardList pageSize={9} gridNumber={4}/>
             </div>
 
         </div>

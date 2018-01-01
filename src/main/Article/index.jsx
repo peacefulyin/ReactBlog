@@ -11,7 +11,8 @@ import './static/marxico.scss'
 class Article extends React.Component {
     constructor(props, context) {
         super(props, context);
-
+        this.init = this.init.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
         this.state = {
             articleId: props.match.params.id,
             content: null,
@@ -40,6 +41,7 @@ class Article extends React.Component {
     componentDidMount() {
         this.init()
     }
+
 
 
     getArticle() {

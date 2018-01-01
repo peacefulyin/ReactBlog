@@ -18,11 +18,12 @@ class CardItem extends React.Component {
 
     render() {
         return (
-            <div ref='cardItem' style={{width:this.props.itemWidth}} className="card-item">
-                <div className="card-img-con" onClick={(e)=> {
-                    e.preventDefault();
-                    this.props.click(this.props.item.id)
-                }}>
+            <div ref='cardItem' style={{width:this.props.itemWidth}}
+                 className="card-item" onClick={(e) => {
+                e.preventDefault();
+                this.props.click(this.props.item.id)
+            }} >
+                <div className="card-img-con">
                     <a href="">
                         {/*图片加载完成事件*/}
                         <img className="card-img" src="https://wacul-ai.com/blog/wp-content/uploads/2017/12/209.jpg" alt=""/>
@@ -33,12 +34,14 @@ class CardItem extends React.Component {
                         <a href="#">{this.props.item.title}</a>
                     </p>
                     <p className="card-details">
-                        <span className="card-tag">
-                            <a href="">{this.props.item.tag}</a>
+                        <span className="card-tag" >
+                            <a href="#" onClick={(e) => {
+                                e.stopPropagation()
+                            }}>{this.props.item.tag}</a>
                         </span>
                         <span>|</span>
                         <span className="card-pubtime">
-                            2017.12.21
+                            {this.props.item.create_time.slice(0,10).split('-').join('.')}
                         </span>
                     </p>
                 </div>

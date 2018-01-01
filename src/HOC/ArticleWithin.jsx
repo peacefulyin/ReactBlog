@@ -9,6 +9,7 @@ export default (WrappedComponent) => {
             this.handleScroll = this.handleScroll.bind(this);
             this.init = this.init.bind(this)
             this.state = {
+                props:props,
                 fixed: false,
                 recomConStyle: {}
             }
@@ -40,7 +41,7 @@ export default (WrappedComponent) => {
 
 
         render() {
-            return <WrappedComponent fixed={this.state.fixed} ref="wrappedComponent"/>
+            return <WrappedComponent props={this.state.props} fixed={this.state.fixed} ref="wrappedComponent"/>
         }
     }
 

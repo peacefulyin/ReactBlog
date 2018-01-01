@@ -7,7 +7,6 @@ import CardList from 'components/CardList'
 import ArticleWithin from 'src/HOC/ArticleWithin'
 import axios from 'axios'
 import Grid from 'material-ui/Grid';
-import Paper from 'material-ui/Paper';
 
 
 import 'src/static/css/bootstrap/bootstrap.css'
@@ -33,11 +32,7 @@ class TagPage extends Component {
     componentWillReceiveProps(nextProps){
         this.setState({
             fixed:nextProps.fixed
-        },()=>{
-            console.log(this.state.fixed)
-
         })
-
     }
 
 
@@ -50,11 +45,11 @@ class TagPage extends Component {
                 <div className="banner-con" ref="banner">
                     <Banner imgUrl={this.state.bannerImg} height={this.state.bannerHeight} title={this.state.bannerTitle} />
                 </div>
-                <Grid className="center-con" container spacing={0}>
-                    <Grid className="center-left" item xs={10}>
-                        <CardList itemWidth={'24.5%'}/>
+                <Grid className="center-con" container spacing={40}>
+                    <Grid className="center-left" item xs={9}>
+                        <CardList pageSize={12} gridNumber={3}/>
                     </Grid>
-                    <Grid className="center-right" item xs={2}>
+                    <Grid className="center-right" item xs={3}>
                         <div className={`${this.state.fixed? 'add-fixed' : ''} right-recom-con`}>
                             <RightRecom/>
                         </div>

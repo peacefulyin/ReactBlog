@@ -3,6 +3,7 @@ import {withRouter} from "react-router-dom";
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import CardItem from './CardItem'
+import Grid from 'material-ui/Grid'
 import {getArticleList} from './api'
 import * as CardListActions from './actions'
 
@@ -19,10 +20,12 @@ class CardList extends React.Component {
         // this.receiveHeight = this.receiveHeight.bind(this)
         this.updating = false
         this.state = {
+            pageSize: this.props.pageSize,
             nextPage: this.props.nextPage,
             list: [],
             // childHeight: 0,
-            windowHeight: 0
+            windowHeight: 0,
+            gridNumber: this.props.gridNumber,
         }
     }
 
@@ -44,7 +47,7 @@ class CardList extends React.Component {
         let scrollHeight = docElem.scrollHeight
         let clientHeight = docElem.clientHeight
         if(scrollTop >= (scrollHeight-clientHeight)- 100){
-            this.listUpdate()
+            this.listUpdate(this.state.pageSize)
         }
     }
 
@@ -56,13 +59,12 @@ class CardList extends React.Component {
                 this.setState({
                     list: this.state.list.concat(res.data.results),
                 })
-                this.props.increase(size/9)
+                this.props.increase(size/this.state.pageSize)
             }).then(() => {
                 this.setState({
                     nextPage: this.props.nextPage
                 }, () => {
                     this.updating = false;
-                    console.log(this.updating)
                 })
             })
         }
@@ -75,7 +77,7 @@ class CardList extends React.Component {
     init() {
         // 恢复到初始页面
         window.addEventListener('scroll', this.handleScroll);
-        this.listUpdate(18)
+        this.listUpdate(this.state.pageSize*2)
     }
 
     componentDidMount() {
@@ -88,15 +90,32 @@ class CardList extends React.Component {
 
 
     render() {
-        return (
-            <div className="card-list">
+        // return (
+        //     <div className="card-list">
+        //         {this.state.updating ? <span>updating</span> : ""}
+        //         {this.state.list.map((item, index) => {
+        //             return (
+        //                 <CardItem itemWidth={this.props.itemWidth} transFunc={this.receiveHeight} ref="cardItem" key={index} item={item} click={this.handleClick}/>
+        //             )
+        //         })}
+        //     </div>
+        // )
+         return (
+            <Grid container spacing={0} className="card-list">
                 {this.state.updating ? <span>updating</span> : ""}
-                {this.state.list.map((item, index) => {
-                    return (
-                        <CardItem itemWidth={this.props.itemWidth} transFunc={this.receiveHeight} ref="cardItem" key={index} item={item} click={this.handleClick}/>
-                    )
-                })}
-            </div>
+                <Grid className="center-con" container spacing={40}>
+                    {this.state.list.map((item, index) => {
+                        return (
+                            <Grid key={index} item xs={this.state.gridNumber}>
+                                <CardItem itemWidth={this.props.itemWidth} transFunc={this.receiveHeight} ref="cardItem"  item={item} click={this.handleClick}/>
+                            </Grid>
+                        )
+                    })}
+
+                </Grid>
+
+            </Grid>
+
         )
     }
 }
