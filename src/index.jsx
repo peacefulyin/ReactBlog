@@ -1,25 +1,26 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { Provider } from 'react-redux'
+import {HashRouter} from 'react-router-dom';
 
 
 import App from 'src/main';
 import configureStore from './store/configureStore';
 
-import 'static/css/reset.css'
-import 'static/css/base.scss'
+
+import 'static/css/index.scss'
+
 
 
 const store = configureStore();
 
 
 render(
-    <MuiThemeProvider store={store}>
-        <BrowserRouter>
+    <Provider store={store}>
+        <HashRouter>
             <App/>
-        </BrowserRouter>
-    </MuiThemeProvider>,
+        </HashRouter>
+    </Provider>,
     document.getElementById('root')
 );
 

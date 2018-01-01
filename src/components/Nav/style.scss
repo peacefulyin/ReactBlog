@@ -1,0 +1,47 @@
+@import "~static/css/common";
+@import  "~static/css/variable";
+
+.m-nav{
+  width: 100%;
+  height:68px;
+  vertical-align: middle;
+
+  &:before{
+    background-image: url(~static/img/logo_aiablog.svg);
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100%;
+    display: inline-block;
+    width: 174px;
+    height: 23px;
+    margin-left: 45px;
+    content: "";
+    vertical-align: middle;
+  }
+
+  .brand-title, .logo, .nav-category{
+    display: inline-block;
+    line-height: 70px;
+    &.logo,&.brand-title{
+      margin-left:45px;
+    }
+    &.nav-category{
+      float: right;
+      margin-right: 100px;
+      .nav-category-master > li{
+        margin: 0 15px;
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+  }
+
+}
+
+.show{
+  display: block;
+}
+
+.hide{
+  display: none;
+}

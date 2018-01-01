@@ -1,0 +1,41 @@
+#RightRecom{
+  width: 100%;
+  height:100%;
+
+  .recom-slider{
+    .r-slicer-title{
+      font-size: 14px;
+      letter-spacing: .6px;
+      font-weight: 500;
+    }
+    li{
+      margin-top: 20px;
+      overflow: hidden;
+      &:hover img{
+        transform: scale(1.1);
+      }
+      &:hover .slider-info-title a{
+        color: #1cb57b;
+      }
+      .slider-img-con{
+        width: 110px;
+        height: 72px;
+        img{
+          height: inherit;
+          width: inherit;
+          transition: all 0.5s;
+        }
+      }
+      .slider-info-title{
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 10px;
+        width: 210px;
+        height:inherit;
+        color: #363733;
+        font-size: 12px;
+      }
+    }
+  }
+
+}

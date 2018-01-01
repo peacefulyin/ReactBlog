@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import userinfo from 'src/main/Home/Header/reducer'
+import cardList from 'main/Home/CardList/reducer'
 
 export default combineReducers({
-    userinfo,
+    cardList,
 })

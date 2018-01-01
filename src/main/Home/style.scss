@@ -1,4 +1,66 @@
-html, body, #root, .main-con{
-  width: 100%;
-  height: 100%;
+@import "~static/css/common";
+@import  "~static/css/variable";
+
+
+
+#homeNav{
+  .m-nav{
+    @include flexIt((top: 0, left: 0));
+    width: 100%;
+    background-color: white;
+  }
+
+  .nav-stub{
+    height:70px;
+  }
+
+  .center-con{
+    width: 100%;
+    .center-left {
+      width: 41.15%;
+      height: 100%;
+      left: 0;
+      top: 70px;
+      vertical-align: top;
+
+      .video-con{
+        position: fixed;
+        top: 68px;
+        bottom: auto;
+        left: 45px;
+        right: auto;
+        height: 840px;
+        width: 698px;
+        video{
+          position: absolute;
+          height: 840px;
+          width: 698px;
+          z-index: 1;
+          left:0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          object-fit: fill;
+        }
+
+        .video-cover{
+          background: rgba(0,0,0,.74);
+          position: absolute;
+          left:0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 2;
+        }
+      }
+
+    }
+    .center-right{
+      vertical-align: top;
+      width: 100-41%;
+      float: right;
+    }
+  }
+
+
 }

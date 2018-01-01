@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 
+
 function resolve(dir) {
     return path.join(__dirname, 'src', dir)
 }
@@ -12,12 +13,15 @@ module.exports = {
     },
     output:{
         path: path.resolve(__dirname,'./public'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     devServer:{
         contentBase: "./public",
         inline:true,
-        port:3000,
+        port:8088,
+        historyApiFallback: true,
+
     },
 
     module: {
@@ -36,6 +40,7 @@ module.exports = {
                     }, {
                         loader: "postcss-loader"
                     }
+
                 ]
             },
             {
